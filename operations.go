@@ -11,7 +11,7 @@ func createDispositivo(titleInput string) error {
 	ctx, cancelfunc := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancelfunc()
 
-	queryStatement := fmt.Sprintf("INSERT INTO [Banca_Movil_GT_QA01].[dbo].[BI_BM_Dispositivo] ( [nombre] ) VALUES ( '%v' );", titleInput)
+	queryStatement := fmt.Sprintf("INSERT INTO  ( [nombre] ) VALUES ( '%v' );", titleInput)
 
 	query, err := database.Prepare(queryStatement)
 	if err != nil {
